@@ -45,7 +45,8 @@ const ThoughtSchema = new Schema (
         // should this be referring to something?
         username: {
             type: String,
-            required: true
+            required: true,
+            ref: 'User'
         },
         reactions: [reactionSchema]
     },
@@ -53,7 +54,8 @@ const ThoughtSchema = new Schema (
         toJSON: {
             virtuals: true,
             getters: true
-        }
+        },
+        id: false
     }
 );
 
