@@ -20,7 +20,9 @@
 
   >## **_Usage_**
 
-  Follow the steps to run this application on the CLI. * npm start to start a localhost server * visit Insomnia or Postman to make requests to the server
+  Follow the steps to run this application on the CLI.
+  * npm start to start a localhost server
+  * visit Insomnia or Postman to make requests to the server
   
 
   >## **_Contribution_**
