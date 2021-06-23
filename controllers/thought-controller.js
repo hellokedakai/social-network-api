@@ -51,7 +51,7 @@ const thoughtController = {
             .catch(err => res.json(err));
     },
     updateThought({ params, body }, res ) {
-        Thought.findOneAndUpdate({ _id: params.id }, body, { new: true, runValidators: true })
+        Thought.findOneAndUpdate({ _id: params.thoughtId }, body, { new: true, runValidators: true })
         .then(dbThoughtData => {
             if(!dbThoughtData) {
                 res.status(404).json({ message: "No thought found with this id!" });
@@ -88,7 +88,7 @@ const thoughtController = {
         .catch(err => res.status(400).json(err));
     },
     deleteReaction({ params }, res ) {
-        User.findOneAndDelete(
+        Thought.findOneAndDelete(
             {_id: params.thoughtId },
             { $pull: { reactions: {reactionId: params.reactionId} } },
             { new: true }
